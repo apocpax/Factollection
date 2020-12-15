@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Unit 2 Assessment</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <h1>To DO List</h1>
+    <h2>Enter a New todo</h2>
+
+    <body>
+        <h1>Todos</h1>
+        <ul>
+            <% todos.forEach(function(t) { %>
+                <li>
+                    <%= t.todo %>
+                        -
+                        <%= t.done ? 'done' : 'not done' %>
+                </li>
+                <% }); %>
+        </ul>
+    </body>
+
+    <input type="submit" value="Add Todo">
+</body>
+<table>
+    <thead>
+        <tr>
+            <th>Todo</th>
+
+
+        </tr>
+    </thead>
+
+
+</html>
