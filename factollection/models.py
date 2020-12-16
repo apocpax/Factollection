@@ -6,7 +6,7 @@ class Fact():
         return response.json()
         
     def Random_Num_Fact():
-        num = random.randint(0, 1000)
+        num = random.randint(0, 99)
         response = requests.get(f'http://numbersapi.com/{num}/?json')
         fact = response.json()
         if (fact['found'] == False):
