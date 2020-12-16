@@ -22,16 +22,15 @@
     <div id="middle-up">
 <!-- Fixed part. never change end  -->
         <p class="mid-orange">About today Dec. 15th<br>Do you know<br><br><br></p>
-        <p id="today-fact">{{ fact }}
+        <p id="today-fact">{{ dateFact.text }}
         </p>
     </div>
     <div id="bottom-band">
         <p id="left-nav" class="fix big clickable"> < </p>
         <div id="bottom-container">
-          <p id="about-random">About 11:</p>
+          <p id="about-random">About {{ numFact.number }}:</p>
           <a href="/login/" class="clickable"> Save </a>
-          <p id="fact-1">Also this is another info panel about a random two digit number
-                         and for this one also it should be covering three lines, like this.
+          <p id="fact-1">{{ numFact.text }}
           </p> 
         </div>
         <p id="right-nav" class="fix big clickable"> > </p>

@@ -11,10 +11,10 @@ import json
 
 @login_required(login_url='loginPage')
 def home(request):
-    for property, value in vars(request).items():
-        print(property, ":", value)
     fact = Fact.Date_Fact('12','15')
-    context = {'fact' :fact['text']}
+    numFact = Fact.Random_Num_Fact()
+    print(f'num_fact from views {numFact}')
+    context = {'dateFact' :fact, 'numFact' :numFact}
     return render(request, 'home.html', context)
 
 def register(request):
