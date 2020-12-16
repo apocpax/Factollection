@@ -3,18 +3,18 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-import requests
+from .forms import CreateUserForm
+from .models import Fact
 import json
 
 
 
-from .forms import CreateUserForm
-
 @login_required(login_url='loginPage')
 def home(request):
-    response = requests.get('http://numbersapi.com/12/12/date?json')
-    fact = response.json()
-    context = {'fact' :fact}
+    for property, value in vars(request).items():
+        print(property, ":", value)
+    fact = Fact.Date_Fact('12','15')
+    context = {'fact' :fact['text']}
     return render(request, 'home.html', context)
 
 def register(request):
