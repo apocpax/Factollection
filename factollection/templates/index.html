@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FACTOLLECTION a personal fun fact collector</title>
-    <link rel="icon" href="./img/fn.png">
-    <link rel="stylesheet" href="css/fn.css">
-    <script defer src="js/fn.js"></script>
+    <link rel="icon" href="../static/img/fn.png">
+    <link rel="stylesheet" href="../static/css/fn.css">
+    <script defer src="../static/js/fn.js"></script>
 </head>
 <body>
 <!-- Fixed part. never change start -->
@@ -14,23 +14,24 @@
         <p id="logo-first" class="watermark">F</p>
         <p id="logo-mid" class="watermark logged">ACTOLLECTIO</p>
         <p id="logo-last" class="watermark">N</p>
-        <p id="slogan" class="watermark">Personal Fun Fact Collection</p>
-        <p id='login-prompt'><br>To build and manage your personal collection please
-            <a href="/login/" class="clickable">login</a> 
-        </p>
+        <p id="slogan" class="watermark logged">Personal Fun Fact Collection</p>
     </div>
     <div id="middle-up">
 <!-- Fixed part. never change end  -->
-        <p id="today">About today Dec. 15th<br>Do you know<br><br><br></p>
-        <p id="today-fact">This is information about today
-                    It should be always gets 3 lines and in case it need to be filled  
-                    or truncated
-        </p>
+        <p id="welcome" class="mid-orange">Welcome<br>{username}<br><br><br></p>
+
+    </div>
+    <div id="selectors">
+        <div id="all" class="tab">ALL</div>
+        <div id="trivia" class="tab selected">TRIVIA</div>
+        <div id="math" class="tab">MATH</div>
+        <div id="date" class="tab">DATE</div>
+        <input id="subject" type="text">
     </div>
     <div id="bottom-band">
         <p id="left-nav" class="fix big clickable"> < </p>
         <div id="bottom-container">
-          <p id="about-random">About 11</p>
+          <p id="about-random">About 11:</p>
           <a href="/login/" class="clickable"> Save </a>
           <p id="fact-1">Also this is another info panel about a random two digit number
                          and for this one also it should be covering three lines, like this.

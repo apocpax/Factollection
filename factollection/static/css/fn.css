@@ -36,7 +36,7 @@ body{
     top: 10vw;
     font-weight: bolder;
     text-align: center;
-    display: inline;
+
 }
 #middle p{
     display: inline-block;
@@ -68,12 +68,15 @@ body{
     top: 20px;
     width: 80vw;
 }
-#today{
+.mid-orange{
     font-weight: bolder;
     text-align: right;
     padding: 0 10px 10px ;
     border-right: 3px solid var(--orng);
     display: inline-block;
+}
+#welcome{
+    height: 28.5vw;
 }
 #today-fact{
     text-align: left;
@@ -139,4 +142,45 @@ a{
 }
 .clickable:active{
     text-shadow: 1px 1px 2px #777;
+}
+
+#selectors{
+    /* outline: 1px solid black; */
+    position: fixed;
+    width: 30vw;
+    height: 5vh;
+    top: 70.5vh;
+    left: 36.6vw;
+    padding: 0;
+}
+.tab{
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    display: inline-block;
+    font-size: 1vw;
+    width: 4.5vw;
+    height: 70%;
+    text-align: center;
+    border: 2px solid #fff;
+    margin: 0 -.22vw;
+    background-color: rgba(0,0,0,.1);
+    border-radius: .6vw .6vw 0 0;
+    cursor: pointer;
+    top: -.2vh;
+}
+
+.selected{
+    background-color: var(--orng);
+    color: #fff;
+    cursor: default;
+}
+
+#subject{
+    width: 4vw;
+    border: none;
+    height: 3.5vh;
+    top: 10vh;
+    display: inline-block;
+    font-size: 1vw;
+    padding: 0 .5vw;
 }
