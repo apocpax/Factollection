@@ -84,6 +84,12 @@ body{
     width: 22vw;
     top: .5vw;
 }
+.link{
+    color: var(--orng);
+    border: none;
+    outline: none;
+    font-size: 1.2vw;
+}
 
 a{
     color: var(--orng);
@@ -136,9 +142,10 @@ a{
 }
 .clickable{
     cursor: pointer;
+    font-weight: bolder;
 }
 .clickable:hover{
-    text-shadow: 2px 3px 3px #000;
+    text-shadow: .1vw .15vw .2vw #000;
 }
 .clickable:active{
     text-shadow: 1px 1px 2px #777;
@@ -183,4 +190,39 @@ a{
     display: inline-block;
     font-size: 1vw;
     padding: 0 .5vw;
+}
+.orange-bar{
+    /* border: 1px solid #000; */
+    display: inline-block;
+    position: fixed;
+    width: 25vw;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.1vw;
+    font-weight: bolder;
+    padding: 1vh 1vw;
+    background-color: var(--orng);
+    color: #fff;
+}
+#index-box{
+    position: fixed;
+    display: inline-block;
+    width: 26vw;
+    height: 50vh;
+    top: 9vh;
+    left: 38vw;
+    overflow: auto;
+    
+}
+::-webkit-scrollbar,
+*::-webkit-scrollbar {
+        display: none;
+    }
+.icon{
+    color: var(--orng);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 0 0 10px;
+}
+.fact-list:hover{
+    background-color: rgba(0,0,0,.1);
+    cursor: pointer;
 }
