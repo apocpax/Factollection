@@ -13,7 +13,6 @@ import json
 def home(request):
     fact = Fact.Date_Fact('12','15')
     numFact = Fact.Random_Num_Fact()
-    print(f'num_fact from views {numFact}')
     context = {'dateFact' :fact, 'numFact' :numFact}
     return render(request, 'home.html', context)
 
