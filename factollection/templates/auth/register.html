@@ -1,22 +1,13 @@
-    <h1>Register Form</h1>
-       {{ form.errors}}
+<h1>Register Form</h1>
+{{ form.errors}}
 
-    <form method="POST" action="/register/">
-        {% csrf_token %}
-        {{ form.first_name.label }}
-        {{ form.first_name }}
-
-        {{ form.username.label }}
-        {{ form.username }}
-
-        {{ form.email.label }}
-        {{ form.email }}
-
-        {{ form.password1.label }}
-        {{ form.password1 }}
-
-        {{ form.password2.label }}
-        {{ form.password2 }}
-        <input type="submit" name="Create User">
-
-      </form>
+<form method="POST" action="/register/">
+  {% csrf_token %} 
+  {{ form.first_name.label }} {{ form.first_name }}<br />
+  {{ form.username.label }} {{ form.username }}<br />
+  {{ form.email.label }} {{ form.email }}<br />
+  {{ form.password1.label }} {{ form.password1 }}<br />
+  {{ form.password2.label }} {{ form.password2 }}<br />
+  <input type="submit" name="Create User" />
+</form>
+<a href="/loginPage/">Login Page</a>
