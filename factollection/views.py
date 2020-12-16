@@ -5,15 +5,23 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .forms import CreateUserForm
 from .models import Fact
+from datetime import date
 import json
 
 
 
 @login_required(login_url='loginPage')
 def home(request):
-    fact = Fact.Date_Fact('12','15')
+    today = date.today()
+    day = today.strftime('%d')
+    month = today.strftime('%m')
+    fact = Fact.Date_Fact(month,day)
     numFact = Fact.Random_Num_Fact()
-    context = {'dateFact' :fact, 'numFact' :numFact}
+    month_abbrev = today.strftime('%b')
+    context = {'dateFact' :fact, 
+                'numFact' :numFact, 
+                'month' :month_abbrev, 
+                'day' :day}
     return render(request, 'home.html', context)
 
 def register(request):
