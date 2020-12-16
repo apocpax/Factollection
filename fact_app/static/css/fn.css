@@ -10,6 +10,8 @@
 *{
     margin: 0;
     padding: 0;
+    outline: none;
+    user-select: none;
 }
 body{
     background-color: var(--backColor);
@@ -83,6 +85,58 @@ body{
 a{
     color: var(--orng);
 }
-a:hover{
+/* a:hover{
     text-shadow: 1px 3px 5px #000;
+} */
+
+#bottom-container{
+    /* outline: 1px solid red; */
+    position: fixed;
+    left: 35vw;
+    /* top: 80px; */
+    /* width: 40vw; */
+    margin: 1vw;
+    padding: 1vw;
+    /* height: 20%; */
+}
+#bottom-container a{
+    /* display: inline-block; */
+    position: absolute;
+    top: 3.5vw;
+    left: 2.5vw;
+}
+#fact-1{
+    width: 25vw;
+    left: 5.3vw;
+    display: inline-block;
+    position: relative;
+}
+#about-random{
+    /* outline: 1px solid blue; */
+    display: inline-block;
+    position: absolute;
+}
+
+.fix{
+    display: inline-block;
+    position: absolute;
+}
+.big{
+    font-size: 6vw;
+    font-weight: bolder;
+    color: #fff;
+    text-shadow: 1px 2px 3px #777;
+    margin: 0 30vw;
+}
+#right-nav{
+    left: 40vw;
+}
+.clickable{
+    cursor: pointer;
+}
+.clickable:hover{
+    text-shadow: 2px 3px 3px #000;
+}
+.clickable:active{
+    text-shadow: 1px 1px 2px #777;
 }
