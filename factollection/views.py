@@ -4,22 +4,33 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .forms import CreateUserForm
-from .models import Fact
+from .models import AuthUser, UserSheet, Fact_API
 from datetime import date
 import json
 
 
+@login_required(login_url='loginPage')
+def get_user_sheets(request):
+    # get the AuthUser and call the sheet and related facts and links
+    user_id = AuthUser.objects.get(id = request.user.id)
+    sheet = UserSheet.objects.get(auth_user = user_id.id)
+    facts = UserSheet.get_user_sheet_facts(user_id.id)
+    links = UserSheet.get_user_sheet_links(user_id.id)
+    context = {'facts' :facts, 'links' :links, 'sheet' :sheet}
+    return render(request,'index.html', context)
 
 @login_required(login_url='loginPage')
 def home(request):
+    #get todays date to pass into the view and Date_Fact Fucntion
     today = date.today()
     day = today.strftime('%d')
     month = today.strftime('%m')
-    fact = Fact.Date_Fact(month,day)
-    numFact = Fact.Random_Num_Fact()
-    month_abbrev = today.strftime('%b')
-    context = {'dateFact' :fact, 
-                'numFact' :numFact, 
+    #api call for random trivia fact and date fact
+    date_fact = Fact_API.date_fact(month,day)
+    trivia_fact = Fact_API.trivia_fact()
+    month_abbrev = today.strftime('%b') 
+    context = {'date_fact' :date_fact, 
+                'trivia_fact' :trivia_fact, 
                 'month' :month_abbrev, 
                 'day' :day}
     return render(request, 'home.html', context)
