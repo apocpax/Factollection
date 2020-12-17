@@ -21,8 +21,9 @@
         <p id="welcome" class="mid-orange">Welcome<br>{username}<br><br><br></p>
         <div id="top-label" class="orange-bar">Saved Facts</div>
         <div id="index-box">
-            <p id="f0" class="fact-list">&#9654;{num} :: {fact_or_note}<span class="icon"> 3 </span></p>
-            <p id="f1" class="fact-list">&#9654;{num} :: {fact_or_note}<span class="icon"> 3 </span></p>
+            <!-- loop through notes or first saved fact of all saved sheets start -->
+            <p id="f0" class="fact-list">&#9654;{subj} :: {fact_or_note}<span class="icon"> {n} </span></p>
+            <!-- loop through notes or first saved fact of all saved sheets end -->
         </div>
     </div>
     <div id="selectors">
@@ -36,10 +37,11 @@
     <div id="bottom-band">
         <p id="left-nav" class="fix big clickable"> < </p>
         <div id="bottom-container">
-          <p id="about-random">About 11:</p>
-          <a href="/login/" class="clickable"> Save </a>
-          <p id="fact-res">Also this is another info panel about a random two digit number
-                         and for this one also it should be covering three lines, like this.
+          <p id="about-random">About{11}:</p>
+          <!-- it may needs to be a form and submit input here -->
+          <a href="" class="clickable" id="save-fact"> Save </a>
+          <p id="fact-res"> {Also this is another info panel about a random two digit number
+                         and for this one also it should be covering three lines, like this.}
           </p> 
         </div>
         <p id="right-nav" class="fix big clickable"> > </p>

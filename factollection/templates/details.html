@@ -18,31 +18,47 @@
     </div>
     <div id="middle-up">
 <!-- Fixed part. never change end  -->
-        <!-- <p id="welcome" class="mid-orange">Welcome<br>{username}<br><br><br></p> -->
         <div id="top-bar">
             <p id="det-del-fact" class="icon clickable">&#x1f5d1;</p>
-            <p id="det-subject">Nov.21</p>
+            <p id="det-subject">{Subj}</p>
             <div id="top-label-det" class="orange-bar left">Details
                 <p id="category" class="clickable">No Category &#9660;</p>
             </div>
             <div id="index-box">
                 <p id="fact" class="det-fact"> 
                     <span id="det-prev" class="icon clickable big nav"> < </span>
-                    {Also this is another info panel about a random two digit number
-                    and for this one also it should be covering three lines, like this.}
+                    {Also this is another info panel containing saved fun facts
+                    and for this one also it can cover up to three lines.}
                     <span id="det-next" class="icon clickable big nav"> > </span>
                 </p>
             </div>
+            <div id="top-label-note" class="orange-bar left">Notes
+               <textarea id="fact-note" name="notes">{{notes}}</textarea>
+            </div>
+            <div id="top-label-links" class="orange-bar left">Links
+            <input id="add-link" type="submit" class="clickable link" value="+">    
+                <div id="links-area">
+                    <!-- Loop starts here for each saved link  -->
+                    <a href={link_url} id={link_n}>{link_label}</a>
+                        <!-- There is non-breakable spaces here. Don't change these two lines -->
+                    <span class="clickable">    &#x1f589;</span> 
+                    <span class="clickable">    &#x1f5d1;</span>
+                    <br>
+                    <!-- Loop for saved links ends here -->
+                </div>
+            </div>
         </div>    
     </div>
-    <div id="links">
-        <input type="submit" class="clickable link" value="+">
-    </div>
     <div id="bottom-band">
-        <div id="bottom-container">
-
-          <a href="/login/" class="clickable"> Save </a>
+        <div id="index-bottom-container">
+          <a href="../" class="btn" id="save"> SAVE </a>
+          <a href="../" class="clickable dark" id="back"> BACK </a>
+          <a href="" class="clickable dark" id="remove"> REMOVE THIS SHEET </a>
         </div>
     </div>
+    <!-- Hidden data containers -->
+    <x id="data-facts" data={facts}></x>
+    <x id="data-categories" data={categories}></x>
+    <x id="data-links" data={links}></x>
 </body>
 </html>
